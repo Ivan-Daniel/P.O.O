@@ -1,0 +1,35 @@
+import java.util.*;
+import javax.swing.*;
+
+public class Main {
+
+   static int sumar (int a, int b){
+       int resultados=0;
+       return resultados=a+b;
+   }
+     static boolean bisiesto (int year){
+        int p, q ,r ;
+        p= year%4;
+        q = year %100;
+        r= year%400;
+        if (p==0 && (q!=0 || r==0)){
+        return true ;
+          } else { return false;}
+     }
+    public static void main(String[] args) {
+        char continuar='s';
+        /*
+        Scanner f = new Scanner(System.in);
+        int salida=sumar(3,5);
+        System.out.println("La suma es: "+salida);
+        */
+        do {
+        int year =Integer.parseInt(JOptionPane.showInputDialog("Digite un año: "));
+        if (bisiesto (year)==true ){
+            System.out.println("El año es bisiesto");
+            JOptionPane.showMessageDialog(null, "El año "+ year+"es bisiesto");
+        } else {JOptionPane.showMessageDialog(null, "El año "+ year+" no es bisiesto");}
+            continuar=JOptionPane.showInputDialog(null,"Desea continuar s/n ").charAt(0);
+        }        while (continuar=='s');
+    }
+}
