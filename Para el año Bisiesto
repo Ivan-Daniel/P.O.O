@@ -1,14 +1,15 @@
 import java.util.*;
 import javax.swing.*;
 
-public class Main {
+public class Participacion {
 
    static int sumar (int a, int b){
        int resultados=0;
        return resultados=a+b;
    }
      static boolean bisiesto (int year){
-        int p, q ,r ;
+       
+         int p, q ,r ;
         p= year%4;
         q = year %100;
         r= year%400;
@@ -16,7 +17,14 @@ public class Main {
         return true ;
           } else { return false;}
      }
-    public static void main(String[] args) {
+     static void ciclo(){
+         int year =Integer.parseInt(JOptionPane.showInputDialog("Digite un año: "));
+        if (bisiesto (year)==true ){
+          JOptionPane.showMessageDialog(null, "El año "+ year+"es bisiesto");
+        } else {JOptionPane.showMessageDialog(null, "El año "+ year+" no es bisiesto");}
+            
+        }
+       public static void main(String[] args) {
         char continuar='s';
         /*
         Scanner f = new Scanner(System.in);
@@ -24,12 +32,8 @@ public class Main {
         System.out.println("La suma es: "+salida);
         */
         do {
-        int year =Integer.parseInt(JOptionPane.showInputDialog("Digite un año: "));
-        if (bisiesto (year)==true ){
-            System.out.println("El año es bisiesto");
-            JOptionPane.showMessageDialog(null, "El año "+ year+"es bisiesto");
-        } else {JOptionPane.showMessageDialog(null, "El año "+ year+" no es bisiesto");}
+            ciclo();
             continuar=JOptionPane.showInputDialog(null,"Desea continuar s/n ").charAt(0);
-        }        while (continuar=='s');
+        }       while (continuar=='s');
     }
 }
